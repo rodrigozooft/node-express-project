@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 //Calling customised modules
 
 var dishes = require('dishRouter.js');
-//var promotions = require('./promoRouter.js');
+var promotions = require('promoRouter.js');
 //var leadership = require('./leaderRouter.js');
 
 var hostname = 'localhost';
@@ -20,7 +20,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 app.use('/dishes', dishes);
-//app.use('/promotions', PromoRouter);
+app.use('/promotions', promotions);
 //app.use('/leadership', leaderRouter);
 
 app.use(express.static(__dirname + '/public'));
