@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 
 var dishes = require('dishRouter.js');
 var promotions = require('promoRouter.js');
-//var leadership = require('./leaderRouter.js');
+var leadership = require('leaderRouter.js');
 
 var hostname = 'localhost';
 var port = 3000;
@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 
 app.use('/dishes', dishes);
 app.use('/promotions', promotions);
-//app.use('/leadership', leaderRouter);
+app.use('/leadership', leadership);
 
 app.use(express.static(__dirname + '/public'));
 
